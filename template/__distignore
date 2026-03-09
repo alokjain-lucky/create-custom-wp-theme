@@ -1,0 +1,21 @@
+# Development Tools
+node_modules
+package-lock.json
+package.json
+webpack.config.js
+README.md
+
+# Source Code
+src
+
+# Git & Editor files
+.git
+.gitignore
+.vscode
+.eslintrc
+.stylelintrc
+.prettierrc
+
+# OS Junk
+.DS_Store
+Thumbs.db

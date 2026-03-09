@@ -1,0 +1,25 @@
+{
+  "name": "{{theme_slug}}",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "format": "wp-scripts format",
+    "lint:js": "wp-scripts lint-js",
+    "lint:css": "wp-scripts lint-style",
+    "zip": "wp-scripts plugin-zip"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^31.6.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

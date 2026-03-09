@@ -1,0 +1,35 @@
+{
+  "name": "create-custom-wp-theme",
+  "version": "1.0.0",
+  "description": "A CLI tool to scaffold a custom WordPress block theme based on the evolved-2026 structure",
+  "main": "bin/index.js",
+  "bin": {
+    "create-custom-wp-theme": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "generator",
+    "scaffold",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alokjain-lucky/create-custom-wp-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alokjain-lucky/create-custom-wp-theme/issues"
+  },
+  "homepage": "https://github.com/alokjain-lucky/create-custom-wp-theme#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.4.1",
+    "degit": "^2.8.4",
+    "fs-extra": "^11.1.0"
+  }
+}
