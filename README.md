@@ -71,6 +71,12 @@ This instantly creates a `src/blocks/hero-banner/` directory with all the necess
 
 > [!TIP]
 > After creating a new block with this command, make sure to import it in your `src/index.js` file so WordPress can find it!
+>
+> **Example:**
+> ```javascript
+> // In your src/index.js file:
+> import './blocks/hero-banner';
+> ```
 
 ```bash
 npm run zip
