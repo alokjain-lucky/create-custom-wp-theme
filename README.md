@@ -1,42 +1,65 @@
-# Custom WordPress Block Theme Generator
+# 🎨 Custom WordPress Block Theme Scaffolder
 
-A command-line tool designed to quickly scaffold a custom WordPress block theme structure based on the modern `@wordpress/scripts` workflow. 
+Welcome! This is a simple, beginner-friendly command-line tool that instantly generates a modern, production-ready **WordPress Block Theme** (Full Site Editing). 
 
-## Requirements
-- Node.js (v14+)
-- npm
+Instead of manually creating `theme.json`, enqueueing scripts, and setting up build tools from scratch, this tool does it all for you in seconds. It uses the official `@wordpress/scripts` package under the hood, so you're immediately ready to write modern JavaScript, SCSS, and custom Gutenberg blocks!
 
-## Usage
+---
 
-You can scaffold a new WordPress theme from any directory on your computer by running this command:
+## 🚀 Getting Started
+
+You do **not** need to install this tool permanently on your computer. As long as you have [Node.js](https://nodejs.org/) installed, you can run it directly from your terminal!
+
+### 1. Create your Theme
+
+Open your terminal, navigate to your local WordPress installation's `themes` folder, and run the magic command:
 
 ```bash
-# Navigate to your WordPress themes directory
-cd /path/to/wp-content/themes/
+cd /working-path/to/your/wp-content/themes/
 
-# Create a new theme using npx
-npx github:alokjain-lucky/create-custom-wp-theme my-new-theme
-
-# Optional Arguments:
-# -n, --theme-name "My Custom Title"  (Sets the style.css Name)
-# -s, --slug "custom-slug"            (Sets the text-domain and folder prefixes)
-
-# Example with arguments:
-npx github:alokjain-lucky/create-custom-wp-theme my-new-theme -n "Awesome Blog" -s "awesome-blog"
+# Launch the interactive theme creator!
+npx github:alokjain-lucky/create-custom-wp-theme
 ```
 
-## What it Does
+### 2. Follow the Prompts
+The tool will ask you a few simple questions:
+1. **Directory Name:** E.g., `my-awesome-theme`
+2. **Theme Title:** E.g., `My Awesome Theme`
+3. **Theme Slug:** E.g., `my-awesome-theme` (used internally for code prefixes)
+4. **Include Example Block:** If you choose `Yes`, we will automatically scaffold a working Custom Gutenberg Block inside `src/blocks/example-block` so you can see exactly how to build and register your own custom blocks!
 
-This CLI tool will:
-1. Create a `my-new-theme` folder where you ran the command.
-2. Copy all boilerplate files from the internal `template/` folder.
-3. Automatically search and replace dynamic names (like `{{theme_slug}}`, `{{theme_name}}`, and `{{function_prefix}}`) inside `style.css`, PHP files, and Package files.
-4. Auto-run `npm install` inside your new theme so it is immediately ready for `@wordpress/scripts`!
+### 3. Start Coding!
 
-## Generated Theme Commands
+Once generated, jump into your new folder and start the development server:
 
-Once your theme is created, simply `cd my-new-theme` and jump straight into development:
+```bash
+cd my-awesome-theme
+npm start
+```
+*This command watches your `src/` folder. Anytime you save a `.scss` or `.js` file, it automatically compiles it into the `build/` folder for WordPress to load!*
 
-- `npm start`: Starts the dev server for compiling assets.
-- `npm run build`: Bundles assets for production.
-- `npm run zip`: Packages a `.zip` file ready to be uploaded to WordPress.
+---
+
+## 🧱 Scaffold More Custom Blocks
+
+Building custom blocks in WordPress manually can require a lot of boilerplate code (`block.json`, `edit.js`, `save.js`, etc.). This CLI tool has a built-in shortcut to generate everything for you!
+
+While inside your newly created theme folder, just run:
+
+```bash
+# Example: create a block called "hero-banner"
+npx github:alokjain-lucky/create-custom-wp-theme g-block hero-banner
+```
+
+This will instantly create a `src/blocks/hero-banner/` directory with all the necessary files. Just remember to import it into your `src/index.js` file if you want it loaded by WordPress!
+
+---
+
+## 📦 Building for Production
+
+When you are ready to install your theme on a live server, run:
+
+```bash
+npm run zip
+```
+This will automatically compile all your code, strip out the developer tools, and create a lightweight `my-awesome-theme.zip` file that you can upload directly via the WordPress Admin dashboard!

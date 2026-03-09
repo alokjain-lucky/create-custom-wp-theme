@@ -30,6 +30,7 @@
     "chalk": "^4.1.2",
     "commander": "^9.4.1",
     "degit": "^2.8.4",
-    "fs-extra": "^11.1.0"
+    "fs-extra": "^11.1.0",
+    "inquirer": "^8.2.7"
   }
 }
