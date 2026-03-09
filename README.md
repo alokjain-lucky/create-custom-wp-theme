@@ -78,7 +78,16 @@ This instantly creates a `src/blocks/hero-banner/` directory with all the necess
 > import './blocks/hero-banner';
 > ```
 
+---
+
+## 📦 Packaging Your Theme
+
+When you're ready to deploy your theme or share it, you can package it into a production-ready `.zip` file. This process automatically compiles all your code, optimizes assets, and strips out developer tools.
+
+Run this command from your theme directory:
+
 ```bash
 npm run zip
 ```
-This will automatically compile all your code, strip out the developer tools, and create a lightweight `my-awesome-theme.zip` file that you can upload directly via the WordPress Admin dashboard!
+
+This will create a lightweight `.zip` file (e.g., `my-awesome-theme.zip`) that you can upload directly via the **WordPress Admin > Appearance > Themes > Add New > Upload Theme** dashboard!
