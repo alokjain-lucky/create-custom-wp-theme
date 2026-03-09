@@ -22,11 +22,13 @@ npx github:alokjain-lucky/create-custom-wp-theme
 ```
 
 ### 2. Follow the Prompts
-The tool will ask you a few simple questions:
-1. **Directory Name:** E.g., `my-awesome-theme`
-2. **Theme Title:** E.g., `My Awesome Theme`
-3. **Theme Slug:** E.g., `my-awesome-theme` (used internally for code prefixes)
-4. **Include Example Block:** If you choose `Yes`, we will automatically scaffold a working Custom Gutenberg Block inside `src/blocks/example-block` so you can see exactly how to build and register your own custom blocks!
+The tool will guide you through setup:
+1. **Directory Name:** The name of the folder created (e.g., `my-theme`).
+2. **Theme Title:** The human-readable name in the WordPress dashboard.
+3. **Theme Slug:** A unique ID for your theme (used for code prefixes).
+4. **Include Example Block?** (Optional)
+   - **No (Default):** Keeps your theme lightweight. Use this if you don't need custom blocks or want to add them manually later.
+   - **Yes:** Automatically adds an "Example Block" in `src/blocks/example-block`. This is great for learning how the block structure works!
 
 ### 3. Start Coding!
 
@@ -36,28 +38,39 @@ Once generated, jump into your new folder and start the development server:
 cd my-awesome-theme
 npm start
 ```
-*This command watches your `src/` folder. Anytime you save a `.scss` or `.js` file, it automatically compiles it into the `build/` folder for WordPress to load!*
 
 ---
 
-## 🧱 Scaffold More Custom Blocks
+## 🛠️ Development Commands
 
-Building custom blocks in WordPress manually can require a lot of boilerplate code (`block.json`, `edit.js`, `save.js`, etc.). This CLI tool has a built-in shortcut to generate everything for you!
+Your new theme comes with a full suite of development tools. Run these from your theme's root directory:
 
-While inside your newly created theme folder, just run:
+| Command | Description |
+| :--- | :--- |
+| `npm start` | **The most common command.** Starts the dev server to watch your files and compile them as you save. |
+| `npm run build` | Bundles your assets for production (optimized and minified). |
+| `npm run format` | Automatically fixes code formatting in your JS and CSS files. |
+| `npm run lint:js` | Checks your JavaScript for common errors. |
+| `npm run lint:css` | Checks your CSS/SCSS for common errors. |
+| `npm run zip` | Creates a ready-to-upload `.zip` file of your theme. |
+
+---
+
+## 🧱 Adding More Custom Blocks
+
+If you decide you need a *new* custom block later on, you don't have to write the boilerplate from scratch. This CLI includes a helper command to add new blocks to an existing theme.
+
+Navigate to your theme folder and run:
 
 ```bash
 # Example: create a block called "hero-banner"
 npx github:alokjain-lucky/create-custom-wp-theme g-block hero-banner
 ```
 
-This will instantly create a `src/blocks/hero-banner/` directory with all the necessary files. Just remember to import it into your `src/index.js` file if you want it loaded by WordPress!
+This instantly creates a `src/blocks/hero-banner/` directory with all the necessary structure (`block.json`, `edit.js`, etc.). 
 
----
-
-## 📦 Building for Production
-
-When you are ready to install your theme on a live server, run:
+> [!TIP]
+> After creating a new block with this command, make sure to import it in your `src/index.js` file so WordPress can find it!
 
 ```bash
 npm run zip
